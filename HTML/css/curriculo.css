@@ -1,0 +1,87 @@
+/* Reset básico e tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+}
+
+p {
+    color: #333333; /* Vermelho puro (#FF0000) dificulta a leitura; prefira tons escuros */
+}
+
+/* Layout Principal (Desktop) */
+body {
+    display: flex;
+}
+
+nav {
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    padding: 20px;
+}
+
+nav h2 {
+    margin-bottom: 15px;
+    color: #e94560;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #e94560;
+}
+
+main {
+    margin-left: 250px; /* Compensação da largura do nav fixo */
+    padding: 30px;
+    width: 100%;
+}
+
+/* Responsividade (Celulares e Tablets) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Empilha o nav acima do main */
+    }
+
+    nav {
+        width: 100%;
+        position: static; /* Remove o posicionamento fixo em telas menores */
+        height: auto;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center; /* Centraliza os links do menu */
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+    }
+
+    main {
+        margin-left: 0; /* Remove a margem lateral no celular */
+        padding: 15px;
+    }
+}
